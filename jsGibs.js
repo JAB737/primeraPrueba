@@ -20,4 +20,15 @@ var x = pets.pop();
 pets.unshift(x);
 pets.forEach(mostrarMiMascota);
 
+var PETS = [];
+
+pets.forEach((value) => {
+    PETS.push(value.toUpperCase());
+});
+
+
+console.log("-----------");
+PETS.sort();
+PETS.forEach(mostrarMiMascota);
+
 
