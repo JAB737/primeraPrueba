@@ -10,5 +10,14 @@ function mostrarMiMascota(value){
     console.log("Quiero a " + value);
 }
 
-pets.pop("Poker");
+console.log("-----------");
+pets.push("Poker");
 pets.forEach(mostrarMiMascota);
+
+console.log("-----------");
+var x = pets.pop();
+
+pets.unshift(x);
+pets.forEach(mostrarMiMascota);
+
+
