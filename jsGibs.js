@@ -41,3 +41,15 @@ console.log("-----------");
 var xp = PETS.indexOf("POKER.",0);
 console.log("Poker ocupa la posicion " + xp);
 
+function constructura() {
+    this.nombre = "";
+    this.apellido = "";
+    this.Print = function(){
+        console.log("Mi nombre es " + this.nombre + " " + this.apellido);
+    };
+}
+
+var obj = new constructura();
+obj.nombre = "Jorge";
+obj.apellido = "Acosta";
+obj.Print();
