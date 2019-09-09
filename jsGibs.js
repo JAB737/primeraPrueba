@@ -20,15 +20,24 @@ var x = pets.pop();
 pets.unshift(x);
 pets.forEach(mostrarMiMascota);
 
-var PETS = [];
+var PETS = pets.map((value) => value.toUpperCase() + ".");
 
-pets.forEach((value) => {
+/* pets.forEach((value) => {
     PETS.push(value.toUpperCase());
 });
-
+*/
 
 console.log("-----------");
 PETS.sort();
 PETS.forEach(mostrarMiMascota);
 
+console.log("-----------");
+var filterPets = pets.filter((value) => {
+    if (value[1] == "a") return value; else return "";
+})
+filterPets.forEach(mostrarMiMascota);
+
+console.log("-----------");
+var xp = PETS.indexOf("POKER.",0);
+console.log("Poker ocupa la posicion " + xp);
 
