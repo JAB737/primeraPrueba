@@ -9,3 +9,6 @@ pets.forEach(mostrarMiMascota);
 function mostrarMiMascota(value){
     console.log("Quiero a " + value);
 }
+
+pets.pop("Poker");
+pets.forEach(mostrarMiMascota);
