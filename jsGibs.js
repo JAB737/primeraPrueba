@@ -47,9 +47,38 @@ function constructura() {
     this.Print = function(){
         console.log("Mi nombre es " + this.nombre + " " + this.apellido);
     };
+    this.PrintAny = function(arg1){console.log("Este metodo imprime esto : " + arg1)};
 }
 
+console.log("-----------");
 var obj = new constructura();
 obj.nombre = "Jorge";
 obj.apellido = "Acosta";
 obj.Print();
+obj.pet = "Wakeman";
+obj.PrintAny(obj.pet);
+
+console.log("-----------");
+
+
+function crearReg(nombre, apellido, edad){
+    class reg{
+        name = nombre;
+        surname = apellido;
+        age = edad;
+    }
+    const registro = new reg;
+    //registro.name = nombre;
+    return registro;
+}
+
+var array = [];
+array.push(crearReg("Jorge","Acosta","45"));
+
+
+array.push(crearReg("Luis","Bello","46"));
+
+
+
+console.log(array[0].name + " tiene " + array[0].age +"\n" + array[1].name + " tiene " + array[1].age);
+
