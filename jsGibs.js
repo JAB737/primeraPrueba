@@ -10,7 +10,7 @@ function mostrarMiMascota(value){
     console.log("Quiero a " + value);
 }
 
-console.log("-----------");
+console.log("-------------");
 pets.push("Poker");
 pets.forEach(mostrarMiMascota);
 
