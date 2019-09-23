@@ -78,7 +78,19 @@ array.push(crearReg("Jorge","Acosta","45"));
 
 array.push(crearReg("Luis","Bello","46"));
 
+function showArray(arr){
+    let a = [];
+    let c= 0;
+    a = arr;
+    let l = a.length;
+    console.log("El Array tiene " + l + " elementos. Estos son :");
+    a.forEach(element => {
+        c++;
+        console.log(c + ") " + element.name + " " + element.surname + ".");
+    });
+    console.log("Fin del Array -------------------");
+}
 
-
+showArray(array);
 console.log(array[0].name + " tiene " + array[0].age +"\n" + array[1].name + " tiene " + array[1].age);
 
