@@ -94,38 +94,63 @@ function showArray(arr){
 showArray(array);
 console.log(array[0].name + " tiene " + array[0].age +"\n" + array[1].name + " tiene " + array[1].age);
 
-testAsync(0);
+testAsync(3);
 console.log("Mira este test...");
 
+let objOutput = {
+    nombre : "No Output"
+}
 
 async function testAsync(num){
-    let output = "";
+    //let output = "";
     try{
-        output = await funcAsyncronica(num);
+        let output = await funcAsyncronica(num);
         console.log(">" + output + "<");
     }
-    catch{
-        console.log("Hubo un error" + output);
+    catch(err){
+        console.log("Hubo un error " + err + "<");
     }
-    
+    console.log(objOutput.nombre);
 }
 
 function funcAsyncronica(num){
     num++;
-    return new Promise ( 
-        (res,rej) => {
-            for (var i = 1; i < num; i++){
-                console.log("Numero : ");
+    let prom = new Promise ( (res,rej) => {
+
+            setTimeout(() => {
+                for (var i = 1; i < num; i++){
+                    console.log("Numero : " + i);
+                }                
                 res("Ok!");
-            }
+                objOutput.nombre = 'Exit of the "async" funtion';
+            }, 2500); 
+
             if (num == 1) rej("NO Ok :(");
+            console.log("Dentro del Promise");
         }
     )
+    return prom;
 }
 
 function p(cb){
     return cb;
 }
 
-var salida = p("Jorge");
+var salida = p("Probando como seria una Function 'Response'/'Reject'");
 console.log(salida);
+
+var contador;
+
+(function(){
+    contador = 0;
+}())
+
+myTimer = setInterval(() => {
+    console.log("Fino!" + contador);
+    contador++;
+    if (contador > 10) {clearInterval(myTimer); contador = 0;}
+}, 1000);
+
+setInterval(() => {
+    console.log("Cada Tres Segundos");
+}, 3000);
