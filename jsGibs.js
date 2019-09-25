@@ -94,3 +94,38 @@ function showArray(arr){
 showArray(array);
 console.log(array[0].name + " tiene " + array[0].age +"\n" + array[1].name + " tiene " + array[1].age);
 
+testAsync(0);
+console.log("Mira este test...");
+
+
+async function testAsync(num){
+    let output = "";
+    try{
+        output = await funcAsyncronica(num);
+        console.log(">" + output + "<");
+    }
+    catch{
+        console.log("Hubo un error" + output);
+    }
+    
+}
+
+function funcAsyncronica(num){
+    num++;
+    return new Promise ( 
+        (res,rej) => {
+            for (var i = 1; i < num; i++){
+                console.log("Numero : ");
+                res("Ok!");
+            }
+            if (num == 1) rej("NO Ok :(");
+        }
+    )
+}
+
+function p(cb){
+    return cb;
+}
+
+var salida = p("Jorge");
+console.log(salida);
